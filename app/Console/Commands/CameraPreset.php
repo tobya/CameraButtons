@@ -54,7 +54,7 @@ class CameraPreset extends Command
         $token = $tokens->{'camera'.$this->argument('camera')};
 
         // Setup cURL
-        $ch = curl_init($token->url);
+        $ch = curl_init($token->url . '/camera_preset');
         curl_setopt_array($ch, array(
             CURLOPT_POST => TRUE,
             CURLOPT_RETURNTRANSFER => TRUE,

@@ -58,10 +58,10 @@ class CameraToken extends Command
             $tokenarray = [
 
                 'camera1' => [
-                    'url' => 'http://camerademo2.cookingisfun.ie/camera_preset'
+                    'url' => 'http://camerademo2.cookingisfun.ie'
                 ],
                 'camera2' => [
-                    'url' => 'http://http://192.168.1.236/camera_preset'
+                    'url' => 'http://http://192.168.1.236'
                 ]
             ];
         }
