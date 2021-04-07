@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class CameraPreset extends Command
 {
@@ -68,6 +69,7 @@ class CameraPreset extends Command
         // Send the request
         $response = curl_exec($ch);
 
+        Log::error(curl_error($ch));
         // Check for errors
         if($response === FALSE){
             die(curl_error($ch));
@@ -83,7 +85,7 @@ class CameraPreset extends Command
         $this->info( 'updated');
 
 
-
+        Log::info(print_r($responseData,true));
         $this->info(print_r($responseData,true)); 
 
         return 0;

@@ -61,7 +61,7 @@ class CameraToken extends Command
                     'url' => 'http://camerademo2.cookingisfun.ie'
                 ],
                 'camera2' => [
-                    'url' => 'http://http://192.168.1.236'
+                    'url' => 'http://192.168.1.236'
                 ]
             ];
         }
