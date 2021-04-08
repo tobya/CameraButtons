@@ -46,7 +46,7 @@ class CommandTokenInput extends Command
             $tokens = readline('Input Token for Camera ' . $Camera . ': ');
 
 
-            $Out = Artisan::call("camera:token $Camera " . $tokens  );
+            $Out = Artisan::call("camera:token $Camera bearer " . $tokens  );
             $this->info('Token Set for Camera: ' . $Camera );
             }
 
