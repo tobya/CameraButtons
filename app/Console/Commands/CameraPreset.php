@@ -6,14 +6,14 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 
-class CameraPreset extends Command
+class CameraPreset extends CameraCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'camera:preset {camera} {preset}';
+    protected $signature = 'camera:preset {camera} {preset} {--login}';
 
     /**
      * The console command description.
@@ -40,6 +40,11 @@ class CameraPreset extends Command
     public function handle()    
     {
 
+        if ($this->option('login')){
+            $this->login();
+        }
+
+
 // The data to send to the API
         $postData = array(
 
@@ -49,10 +54,7 @@ class CameraPreset extends Command
         );
 
 
-        $tokens = json_decode(Storage::disk('token')->get( 'tokens.json'));
-
-
-        $token = $tokens->{'camera'.$this->argument('camera')};
+        $token = $this->getToken();
 
         // Setup cURL
         $ch = curl_init($token->url . '/camera_preset');
@@ -90,5 +92,7 @@ class CameraPreset extends Command
 
         return 0;
     }
+
+
     
 }
