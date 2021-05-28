@@ -40,14 +40,26 @@ class CommandTokenInput extends Command
     {
 
             $Camera = $this->argument('camera');
+
+            if ($Camera == 'all'){
+                $Cameras = collect([1,2]);
+            } else {
+                $Cameras = collect([$Camera]);
+            }
+
             while(true){
 
+                foreach ($Cameras as $Camera) {
+                    # code...
+            $token = readline('Input Token for Camera ' . $Camera . ': ');
 
-            $tokens = readline('Input Token for Camera ' . $Camera . ': ');
+            if ($token != ''){
 
 
-            $Out = Artisan::call("camera:token $Camera bearer " . $tokens  );
+            $Out = Artisan::call("camera:token $Camera bearer " . $token  );
             $this->info('Token Set for Camera: ' . $Camera );
+            } 
+                }
             }
 
         return 0;
