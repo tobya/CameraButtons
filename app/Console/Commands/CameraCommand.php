@@ -49,8 +49,8 @@ class CameraCommand extends Command
         // The data to send to the API
         $postData = array(
 
-        "name"=> "ballymaloe", 
-        "password" => "priority"
+        "name"=> "$UID", 
+        "password" => "$PWD"
 
         );
 
