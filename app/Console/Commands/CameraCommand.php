@@ -15,7 +15,7 @@ class CameraCommand extends Command
      * @var string
      */
     protected $signature = 'command:name';
-    protected $hidden = true;
+   // protected $hidden = true;
 
     /**
      * The console command description.
@@ -49,8 +49,8 @@ class CameraCommand extends Command
         // The data to send to the API
         $postData = array(
 
-        "name"=> "ballymaloe", 
-        "password" => "priority"
+        "name"=> config('camera.username'), 
+        "password" => config('camera.password'),
 
         );
 
