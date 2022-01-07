@@ -5,5 +5,33 @@
 </head>
 <body>
 <a href="javascript:window.prompt('Your Access Token (Ctrl+C to Copy)',AccessToken); alert('You can now paste into token input window'); window.location('http://localhost?accesstoken=' + AccessToken);">my link</a>
+
+<script type="text/javascript">
+	
+
+	// javascript for login from browser
+javascript: (() => {
+
+let CameraNum = window.prompt('Camera Number','1'); 
+
+let url = 'http://camerabuttons.machine.ie/login/token/' + CameraNum +'/' + window.AccessToken;
+console.log(url);
+    alert(url);
+  
+   let xml = new XMLHttpRequest();
+   
+      xml.open('GET',url,true );
+      
+       xml.send();
+  
+} )(); 
+
+</script>
+  
+  
+  
+})();
+</p>
+
 </body>
 </html>
