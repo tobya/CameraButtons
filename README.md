@@ -17,8 +17,22 @@ Install
 Commands
 ----
 
-````batchfile
+## Move Camera to Preset
 
-php artisan camerabuttons:tokeninput all
+Move the camera to a specific preset.
+
+- {camera} Camera Number read from config
+- {preset} Preset number 0 - 9
 
 ````
+php artisan camera:preset {camera} {preset}
+````
+
+
+
+````batchfile
+
+php artisan camerabuttons:tokeninput
+
+````
+
