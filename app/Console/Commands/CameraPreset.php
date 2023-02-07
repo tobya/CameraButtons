@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Log;
 
 class CameraPreset extends CameraCommand
 {
+
+     protected $hidden = false;
+    
     /**
      * The name and signature of the console command.
      *
@@ -71,9 +74,9 @@ class CameraPreset extends CameraCommand
         // Send the request
         $response = curl_exec($ch);
 
-        Log::error(curl_error($ch));
         // Check for errors
         if($response === FALSE){
+        Log::error(curl_error($ch));
             die(curl_error($ch));
         }
 
