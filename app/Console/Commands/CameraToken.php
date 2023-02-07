@@ -62,6 +62,10 @@ class CameraToken extends Command
                 ],
                 'camera2' => [
                     'url' => 'http://192.168.1.236'
+                ],
+
+                                'camera5' => [
+                    'url' => 'http://192.168.1.233'
                 ]
             ];
         }
